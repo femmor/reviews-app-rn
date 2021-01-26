@@ -1,4 +1,6 @@
+import 'react-native-gesture-handler';
 import React, { useState } from 'react';
+import { NavigationContainer } from '@react-navigation/native';
 import { SafeAreaView, StyleSheet, Text, View } from 'react-native';
 import tailwind from 'tailwind-rn';
 import {useFonts} from "expo-font"
@@ -18,9 +20,11 @@ export default props => {
     return <AppLoading />;
   } else {
     return (
-      <SafeAreaView>
-          <Home />
-      </SafeAreaView>
+      <NavigationContainer>
+        <SafeAreaView>
+            <Home />
+        </SafeAreaView>
+      </NavigationContainer>
     );
   }
 };
