@@ -21,10 +21,33 @@ export default props => {
   } else {
     return (
       <NavigationContainer>
-        <Stack.Navigator initialRouteName="Home">
-            <Stack.Screen name="Home" component={Home} />
+        <Stack.Navigator 
+          initialRouteName="Home" 
+          screenOptions={{
+            headerStyle: {
+              backgroundColor: '#f4511e',
+            },
+            headerTintColor: '#fff',
+            headerTitleStyle: {
+              fontWeight: 'bold',
+              },
+          }}
+          >
+            <Stack.Screen 
+            name="Home" 
+            component={Home} 
+            options={{
+              title: "GameZone",
+            }}
+            />
             <Stack.Screen name="About" component={About} />
-            <Stack.Screen name="Details" component={ReviewDetails} />
+            <Stack.Screen 
+              name="Details" 
+              component={ReviewDetails} 
+              options={{
+              title: "Review Details",
+              }}
+            />
         </Stack.Navigator>
       </NavigationContainer>
     );
